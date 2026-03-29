@@ -1,0 +1,22 @@
+{
+  "name": "haider-atelier",
+  "version": "1.0.0",
+  "description": "Handmade Portraits by Haider Atelier",
+  "type": "module",
+  "scripts": {
+    "dev": "vercel dev",
+    "build": "echo 'Static HTML - no build needed'",
+    "lint": "echo 'No linter configured'"
+  },
+  "dependencies": {
+    "@vercel/analytics": "^1.4.1"
+  },
+  "devDependencies": {},
+  "keywords": [
+    "portfolio",
+    "art",
+    "portraits"
+  ],
+  "author": "",
+  "license": "ISC"
+}
