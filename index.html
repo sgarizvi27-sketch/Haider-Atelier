@@ -215,13 +215,14 @@ footer{background:#030303;border-top:1px solid rgba(255,255,255,0.04);padding:64
   <div class="menu-panel">
     <div class="menu-top"><span>Navigation</span><button class="menu-close" onclick="toggleMenu()">✕</button></div>
     <div class="menu-links">
-      <div class="menu-link"><div class="menu-bar" style="width:22px;background:rgba(255,255,255,0.8);"></div><span class="menu-lbl" style="color:#fff;">Home</span></div>
-      <div class="menu-link"><div class="menu-bar" style="width:6px;background:rgba(255,255,255,0.12);"></div><span class="menu-lbl" style="color:rgba(255,255,255,0.28);">Gallery</span></div>
-      <div class="menu-link"><div class="menu-bar" style="width:6px;background:rgba(255,255,255,0.12);"></div><span class="menu-lbl" style="color:rgba(255,255,255,0.28);">Pricing</span></div>
-      <div class="menu-link"><div class="menu-bar" style="width:6px;background:rgba(255,255,255,0.12);"></div><span class="menu-lbl" style="color:rgba(255,255,255,0.28);">Order</span></div>
-      <div class="menu-link"><div class="menu-bar" style="width:6px;background:rgba(255,255,255,0.12);"></div><span class="menu-lbl" style="color:rgba(255,255,255,0.28);">About</span></div>
-      <div class="menu-link"><div class="menu-bar" style="width:6px;background:rgba(255,255,255,0.12);"></div><span class="menu-lbl" style="color:rgba(255,255,255,0.28);">Testimonials</span></div>
-      <div class="menu-link"><div class="menu-bar" style="width:6px;background:rgba(255,255,255,0.12);"></div><span class="menu-lbl" style="color:rgba(255,255,255,0.28);">Contact</span></div>
+      <div class="menu-link" onclick="showPage('home'); toggleMenu();"><div class="menu-bar" style="width:22px;background:rgba(255,255,255,0.8);"></div><span class="menu-lbl" style="color:#fff;">Home</span></div>
+      <div class="menu-link" onclick="showPage('gallery'); toggleMenu();"><div class="menu-bar" style="width:6px;background:rgba(255,255,255,0.12);"></div><span class="menu-lbl" style="color:rgba(255,255,255,0.28);">Gallery</span></div>
+      <div class="menu-link" onclick="showPage('pricing'); toggleMenu();"><div class="menu-bar" style="width:6px;background:rgba(255,255,255,0.12);"></div><span class="menu-lbl" style="color:rgba(255,255,255,0.28);">Pricing</span></div>
+      <div class="menu-link" onclick="showPage('order'); toggleMenu();"><div class="menu-bar" style="width:6px;background:rgba(255,255,255,0.12);"></div><span class="menu-lbl" style="color:rgba(255,255,255,0.28);">Order</span></div>
+      <div class="menu-link" onclick="showPage('about'); toggleMenu();"><div class="menu-bar" style="width:6px;background:rgba(255,255,255,0.12);"></div><span class="menu-lbl" style="color:rgba(255,255,255,0.28);">About</span></div>
+      <div class="menu-link" onclick="showPage('testimonials'); toggleMenu();"><div class="menu-bar" style="width:6px;background:rgba(255,255,255,0.12);"></div><span class="menu-lbl" style="color:rgba(255,255,255,0.28);">Testimonials</span></div>
+      <div class="menu-link" onclick="showPage('contact'); toggleMenu();"><div class="menu-bar" style="width:6px;background:rgba(255,255,255,0.12);"></div><span class="menu-lbl" style="color:rgba(255,255,255,0.28);">Contact</span></div>
+        
     </div>
     <div class="menu-foot">
       <div><p style="font-size:9px;letter-spacing:4px;color:#333;text-transform:uppercase;font-family:sans-serif;margin-bottom:5px;">Haider Atelier</p><small style="font-size:11px;color:#2a2a2a;font-family:sans-serif;line-height:1.7;">Graphite & Charcoal Portraits<br/>Handmade in India</small></div>
@@ -984,6 +985,20 @@ document.addEventListener("DOMContentLoaded",function(){
   showPage("home");
   updateSummary();
 });
+</script>
+<script>
+function showPage(pageId) {
+  document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
+  document.getElementById('page-' + pageId).classList.add('active');
+}
+
+function toggleMenu() {
+  const menu = document.getElementById('menu-overlay');
+  const hamburger = document.getElementById('hamburger');
+
+  menu.classList.toggle('open');
+  hamburger.classList.toggle('open');
+}
 </script>
 </body>
 </html>
